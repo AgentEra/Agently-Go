@@ -1,0 +1,29 @@
+{
+  "case_id": "prompt_002_input_only",
+  "expected_messages": [
+    {
+      "content": "hello",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": null,
+  "expected_serializable_prompt": {
+    ".agent": {},
+    ".request": {
+      "input": "hello"
+    }
+  },
+  "expected_text": "user:\n[INPUT]:\nhello\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "direct",
+  "prompt_data": {
+    ".agent": {},
+    ".request": {
+      "input": "hello"
+    }
+  },
+  "settings": {}
+}

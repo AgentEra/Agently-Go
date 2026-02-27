@@ -1,0 +1,34 @@
+{
+  "case_id": "configure_019_extra_field_order_preserved",
+  "configure": {
+    "content": "$persona: mentor\n$style: concise\ngoal: parity\nhint: keep-order\n.request:\n  input: check order",
+    "format": "yaml",
+    "mappings": {},
+    "prompt_key_path": ""
+  },
+  "expected_messages": [
+    {
+      "content": "[persona]:\nmentor\n\n[style]:\nconcise\n\n[goal]:\nparity\n\n[hint]:\nkeep-order\n\n[INPUT]:\ncheck order\n\n[OUTPUT]:",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": null,
+  "expected_serializable_prompt": {
+    ".agent": {
+      "persona": "mentor",
+      "style": "concise"
+    },
+    ".request": {
+      "goal": "parity",
+      "hint": "keep-order",
+      "input": "check order"
+    }
+  },
+  "expected_text": "user:\n[persona]:\nmentor\n\n[style]:\nconcise\n\n[goal]:\nparity\n\n[hint]:\nkeep-order\n\n[INPUT]:\ncheck order\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "configure",
+  "settings": {}
+}

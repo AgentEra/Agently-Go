@@ -1,0 +1,51 @@
+[
+  {
+    "capability_id": "utils.storage.async_storage",
+    "phase": "P1",
+    "scope": "utils",
+    "python_source": [
+      "agently/utils/Storage.py",
+      "tests/test_utils/test_storage.py"
+    ],
+    "go_targets": {
+      "tests": [],
+      "examples": [],
+      "impl": []
+    },
+    "status": "MISSING",
+    "milestone": "v1.1"
+  },
+  {
+    "capability_id": "utils.python_sandbox",
+    "phase": "P1",
+    "scope": "utils",
+    "python_source": [
+      "agently/utils/PythonSandbox.py"
+    ],
+    "go_targets": {
+      "tests": [],
+      "examples": [],
+      "impl": []
+    },
+    "status": "MISSING",
+    "milestone": "v1.1"
+  },
+  {
+    "capability_id": "builtins.tools.search_browse_cmd",
+    "phase": "P1",
+    "scope": "builtins_tools",
+    "python_source": [
+      "agently/builtins/tools/*",
+      "examples/builtin_tools/*"
+    ],
+    "go_targets": {
+      "tests": [],
+      "examples": [
+        "examples/builtin_tools/README.md"
+      ],
+      "impl": []
+    },
+    "status": "MISSING",
+    "milestone": "v1.1"
+  }
+]

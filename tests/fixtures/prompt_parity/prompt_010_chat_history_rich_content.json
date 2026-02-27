@@ -1,0 +1,123 @@
+{
+  "case_id": "prompt_010_chat_history_rich_content",
+  "expected_messages": [
+    {
+      "content": [
+        {
+          "text": "[CHAT HISTORY]",
+          "type": "text"
+        }
+      ],
+      "role": "user"
+    },
+    {
+      "content": [
+        {
+          "text": "hello",
+          "type": "text"
+        },
+        {
+          "image_url": {
+            "url": "http://img"
+          },
+          "type": "image_url"
+        }
+      ],
+      "role": "assistant"
+    },
+    {
+      "content": [
+        {
+          "text": "question",
+          "type": "text"
+        }
+      ],
+      "role": "user"
+    },
+    {
+      "content": [
+        {
+          "text": "[User continue input]",
+          "type": "text"
+        }
+      ],
+      "role": "assistant"
+    },
+    {
+      "content": "continue",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": null,
+  "expected_serializable_prompt": {
+    ".agent": {},
+    ".request": {
+      "chat_history": [
+        {
+          "content": [
+            {
+              "text": "hello",
+              "type": "text"
+            },
+            {
+              "image_url": {
+                "url": "http://img"
+              },
+              "type": "image_url"
+            }
+          ],
+          "role": "assistant"
+        },
+        {
+          "content": [
+            {
+              "text": "question",
+              "type": "text"
+            }
+          ],
+          "role": "user"
+        }
+      ],
+      "input": "continue"
+    }
+  },
+  "expected_text": "user:\n[CHAT HISTORY]:\n[assistant]:hello\n[user]:question\n\n[INPUT]:\ncontinue\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": true,
+    "strict_role_orders": true
+  },
+  "mode": "direct",
+  "prompt_data": {
+    ".agent": {},
+    ".request": {
+      "chat_history": [
+        {
+          "content": [
+            {
+              "text": "hello",
+              "type": "text"
+            },
+            {
+              "image_url": {
+                "url": "http://img"
+              },
+              "type": "image_url"
+            }
+          ],
+          "role": "assistant"
+        },
+        {
+          "content": [
+            {
+              "text": "question",
+              "type": "text"
+            }
+          ],
+          "role": "user"
+        }
+      ],
+      "input": "continue"
+    }
+  },
+  "settings": {}
+}

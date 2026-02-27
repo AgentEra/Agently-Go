@@ -1,0 +1,58 @@
+{
+  "case_id": "configure_015_output_type_desc_conversion",
+  "configure": {
+    "content": ".request:\n  input: test\n  output:\n    answer:\n      $type: str\n      $desc: final answer\n    extra:\n      .type:\n        detail:\n          $type: str\n      .desc: extra block",
+    "format": "yaml",
+    "mappings": {},
+    "prompt_key_path": ""
+  },
+  "expected_messages": [
+    {
+      "content": "[INPUT]:\ntest\n\n[OUTPUT REQUIREMENT]:\nData Format: JSON\nData Structure:\n{\n  \"answer\": <str>, // final answer\n  \"extra\": {\n      \"detail\": <str> //\n    } // extra block\n}\n\n[OUTPUT]:",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": {
+    "answer": {
+      "$desc": "final answer",
+      "$type": "str"
+    },
+    "extra": {
+      "$desc": "extra block",
+      "$type": {
+        "detail": [
+          "str",
+          null
+        ]
+      }
+    }
+  },
+  "expected_serializable_prompt": {
+    ".agent": {},
+    ".request": {
+      "input": "test",
+      "output": {
+        "answer": {
+          "$desc": "final answer",
+          "$type": "str"
+        },
+        "extra": {
+          "$desc": "extra block",
+          "$type": {
+            "detail": [
+              "str",
+              null
+            ]
+          }
+        }
+      }
+    }
+  },
+  "expected_text": "user:\n[INPUT]:\ntest\n\n[OUTPUT REQUIREMENT]:\nData Format: JSON\nData Structure:\n{\n  \"answer\": <str>, // final answer\n  \"extra\": {\n      \"detail\": <str> //\n    } // extra block\n}\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "configure",
+  "settings": {}
+}

@@ -1,0 +1,43 @@
+{
+  "case_id": "configure_013_yaml_basic_mappings",
+  "configure": {
+    "content": ".agent:\n  system: You are ${role}\n.request:\n  input: Ask ${topic}\n$persona: ${persona}\n${request_key}: ${request_value}",
+    "format": "yaml",
+    "mappings": {
+      "persona": "teacher",
+      "request_key": "note",
+      "request_value": "from-yaml",
+      "role": "assistant",
+      "topic": "recursion"
+    },
+    "prompt_key_path": ""
+  },
+  "expected_messages": [
+    {
+      "content": "You are assistant",
+      "role": "system"
+    },
+    {
+      "content": "[persona]:\nteacher\n\n[note]:\nfrom-yaml\n\n[INPUT]:\nAsk recursion\n\n[OUTPUT]:",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": null,
+  "expected_serializable_prompt": {
+    ".agent": {
+      "persona": "teacher",
+      "system": "You are assistant"
+    },
+    ".request": {
+      "input": "Ask recursion",
+      "note": "from-yaml"
+    }
+  },
+  "expected_text": "user:\n[SYSTEM]:\nYou are assistant\n\n[persona]:\nteacher\n\n[note]:\nfrom-yaml\n\n[INPUT]:\nAsk recursion\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "configure",
+  "settings": {}
+}

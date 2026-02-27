@@ -1,0 +1,62 @@
+{
+  "case_id": "prompt_012_attachment_only_rich_true",
+  "expected_messages": [
+    {
+      "content": [
+        {
+          "text": "text-a",
+          "type": "text"
+        },
+        {
+          "image_url": {
+            "url": "http://img"
+          },
+          "type": "image_url"
+        }
+      ],
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": null,
+  "expected_serializable_prompt": {
+    ".agent": {},
+    ".request": {
+      "attachment": [
+        {
+          "text": "text-a",
+          "type": "text"
+        },
+        {
+          "image_url": {
+            "url": "http://img"
+          },
+          "type": "image_url"
+        }
+      ]
+    }
+  },
+  "expected_text": "user:\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": true,
+    "strict_role_orders": true
+  },
+  "mode": "direct",
+  "prompt_data": {
+    ".agent": {},
+    ".request": {
+      "attachment": [
+        {
+          "text": "text-a",
+          "type": "text"
+        },
+        {
+          "image_url": {
+            "url": "http://img"
+          },
+          "type": "image_url"
+        }
+      ]
+    }
+  },
+  "settings": {}
+}

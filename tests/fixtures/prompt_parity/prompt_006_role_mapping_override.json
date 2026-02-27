@@ -1,0 +1,49 @@
+{
+  "case_id": "prompt_006_role_mapping_override",
+  "expected_messages": [
+    {
+      "content": "You are mapped",
+      "role": "system"
+    },
+    {
+      "content": "hello",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": null,
+  "expected_serializable_prompt": {
+    ".agent": {
+      "system": "You are mapped"
+    },
+    ".request": {
+      "input": "hello"
+    }
+  },
+  "expected_text": "user:\n[SYSTEM]:\nYou are mapped\n\n[INPUT]:\nhello\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "role_mapping": {
+      "assistant": "assistant",
+      "user": "user"
+    },
+    "strict_role_orders": true
+  },
+  "mode": "direct",
+  "prompt_data": {
+    ".agent": {
+      "system": "You are mapped"
+    },
+    ".request": {
+      "input": "hello"
+    }
+  },
+  "settings": {
+    "prompt.role_mapping": {
+      "_": "assistant",
+      "assistant": "assistant",
+      "developer": "developer",
+      "system": "system",
+      "user": "user"
+    }
+  }
+}

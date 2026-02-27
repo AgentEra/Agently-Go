@@ -1,0 +1,102 @@
+{
+  "case_id": "prompt_003_full_slots_with_json_output",
+  "expected_messages": [
+    {
+      "content": "system role",
+      "role": "system"
+    },
+    {
+      "content": "developer directions",
+      "role": "developer"
+    },
+    {
+      "content": "[INFO]:\n- a: A\n- b: B\n\n[INSTRUCT]:\n- do-1\n- do-2\n\n\n[EXAMPLES]:\n- ex1\n- ex2\n\n\n[INPUT]:\nask\n\n[OUTPUT REQUIREMENT]:\nData Format: JSON\nData Structure:\n{\n  \"answer\": {\n    \"$desc\": <final answer>,\n    \"$type\": <str>\n  },\n  \"steps\": [\n    {\n      \"$desc\": <one step>,\n      \"$type\": <str>\n    },\n    ...\n  ]\n}\n\n[OUTPUT]:",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": {
+    "answer": {
+      "$desc": "final answer",
+      "$type": "str"
+    },
+    "steps": [
+      {
+        "$desc": "one step",
+        "$type": "str"
+      }
+    ]
+  },
+  "expected_serializable_prompt": {
+    ".agent": {
+      "developer": "developer directions",
+      "system": "system role"
+    },
+    ".request": {
+      "examples": [
+        "ex1",
+        "ex2"
+      ],
+      "info": {
+        "a": "A",
+        "b": "B"
+      },
+      "input": "ask",
+      "instruct": [
+        "do-1",
+        "do-2"
+      ],
+      "output": {
+        "answer": {
+          "$desc": "final answer",
+          "$type": "str"
+        },
+        "steps": [
+          {
+            "$desc": "one step",
+            "$type": "str"
+          }
+        ]
+      }
+    }
+  },
+  "expected_text": "user:\n[SYSTEM]:\nsystem role\n\n[DEVELOPER DIRECTIONS]:\ndeveloper directions\n\n[INFO]:\n- a: A\n- b: B\n\n[INSTRUCT]:\n- do-1\n- do-2\n\n\n[EXAMPLES]:\n- ex1\n- ex2\n\n\n[INPUT]:\nask\n\n[OUTPUT REQUIREMENT]:\nData Format: JSON\nData Structure:\n{\n  \"answer\": {\n    \"$desc\": <final answer>,\n    \"$type\": <str>\n  },\n  \"steps\": [\n    {\n      \"$desc\": <one step>,\n      \"$type\": <str>\n    },\n    ...\n  ]\n}\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "direct",
+  "prompt_data": {
+    ".agent": {
+      "developer": "developer directions",
+      "system": "system role"
+    },
+    ".request": {
+      "examples": [
+        "ex1",
+        "ex2"
+      ],
+      "info": {
+        "a": "A",
+        "b": "B"
+      },
+      "input": "ask",
+      "instruct": [
+        "do-1",
+        "do-2"
+      ],
+      "output": {
+        "answer": {
+          "$desc": "final answer",
+          "$type": "str"
+        },
+        "steps": [
+          {
+            "$desc": "one step",
+            "$type": "str"
+          }
+        ]
+      }
+    }
+  },
+  "settings": {}
+}

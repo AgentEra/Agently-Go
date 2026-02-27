@@ -1,0 +1,65 @@
+{
+  "case_id": "prompt_007_prompt_title_mapping_override",
+  "expected_messages": [
+    {
+      "content": "sys",
+      "role": "system"
+    },
+    {
+      "content": "[INPUT]:\nhello\n\n[OUTPUT REQUIREMENT]:\nData Format: JSON\nData Structure:\n{\n  \"answer\": {\n    \"$type\": <str>\n  }\n}\n\n[OUTPUT]:",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": {
+    "answer": {
+      "$type": "str"
+    }
+  },
+  "expected_serializable_prompt": {
+    ".agent": {
+      "system": "sys"
+    },
+    ".request": {
+      "input": "hello",
+      "output": {
+        "answer": {
+          "$type": "str"
+        }
+      }
+    }
+  },
+  "expected_text": "user:\n[SYSTEM ROLE]:\nsys\n\n[INPUT]:\nhello\n\n[OUTPUT REQUIREMENT]:\nData Format: JSON\nData Structure:\n{\n  \"answer\": {\n    \"$type\": <str>\n  }\n}\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "direct",
+  "prompt_data": {
+    ".agent": {
+      "system": "sys"
+    },
+    ".request": {
+      "input": "hello",
+      "output": {
+        "answer": {
+          "$type": "str"
+        }
+      }
+    }
+  },
+  "settings": {
+    "prompt.prompt_title_mapping": {
+      "action_results": "ACTION RESULTS",
+      "chat_history": "CHAT HISTORY",
+      "developer": "DEVELOPER",
+      "examples": "EXAMPLES",
+      "info": "INFO",
+      "input": "INPUT",
+      "instruct": "INSTRUCTION",
+      "output": "OUTPUT",
+      "output_requirement": "OUTPUT REQUIREMENT",
+      "system": "SYSTEM ROLE",
+      "tools": "TOOLS"
+    }
+  }
+}

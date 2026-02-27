@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Go build/test
+bin/
+dist/
+*.test
+*.out
+*.prof
+coverage.out
+
+# IDE
+.idea/
+.vscode/
+
+# Env and local runtime
+.env
+.env.*
+localstorage.db
+
+# Python helper cache (for fixture generator script)
+__pycache__/
+.pytest_cache/
+
+# Temp logs
+*.log
+
+# Internal planning/spec artifacts (do not publish)
+docs/spec/
+agently/docs/spec/

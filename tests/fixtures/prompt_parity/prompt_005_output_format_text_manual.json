@@ -1,0 +1,45 @@
+{
+  "case_id": "prompt_005_output_format_text_manual",
+  "expected_messages": [
+    {
+      "content": "[INPUT]:\nsay hi\n\n[OUTPUT]:",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": {
+    "answer": {
+      "$type": "str"
+    }
+  },
+  "expected_serializable_prompt": {
+    ".agent": {},
+    ".request": {
+      "input": "say hi",
+      "output": {
+        "answer": {
+          "$type": "str"
+        }
+      },
+      "output_format": "text"
+    }
+  },
+  "expected_text": "user:\n[INPUT]:\nsay hi\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "direct",
+  "prompt_data": {
+    ".agent": {},
+    ".request": {
+      "input": "say hi",
+      "output": {
+        "answer": {
+          "$type": "str"
+        }
+      },
+      "output_format": "text"
+    }
+  },
+  "settings": {}
+}

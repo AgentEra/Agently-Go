@@ -1,0 +1,20 @@
+{
+  "case_id": "prompt_001_empty_prompt_error",
+  "expected_messages_error": "\"Prompt requires at least one of 'input', 'info', 'instruct', 'output', 'attachment' or customize extra prompt keys to be provided.\"",
+  "expected_output_schema": null,
+  "expected_serializable_prompt": {
+    ".agent": {},
+    ".request": {}
+  },
+  "expected_text_error": "\"Prompt requires at least one of 'input', 'info', 'instruct', 'output', 'attachment' or customize extra prompt keys to be provided.\"",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "direct",
+  "prompt_data": {
+    ".agent": {},
+    ".request": {}
+  },
+  "settings": {}
+}

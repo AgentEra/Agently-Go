@@ -1,0 +1,47 @@
+{
+  "case_id": "configure_014_json_prompt_key_path",
+  "configure": {
+    "content": "{\"p1\": {\".request\": {\"input\": \"wrong\"}}, \"p2\": {\".agent\": {\"system\": \"SYS ${name}\"}, \".request\": {\"input\": \"IN ${topic}\", \"output\": {\"reply\": {\"$type\": \"str\"}}}}}",
+    "format": "json",
+    "mappings": {
+      "name": "N1",
+      "topic": "T1"
+    },
+    "prompt_key_path": "p2"
+  },
+  "expected_messages": [
+    {
+      "content": "SYS N1",
+      "role": "system"
+    },
+    {
+      "content": "[INPUT]:\nIN T1\n\n[OUTPUT REQUIREMENT]:\nData Format: JSON\nData Structure:\n{\n  \"reply\": <str> //\n}\n\n[OUTPUT]:",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": {
+    "reply": {
+      "$type": "str"
+    }
+  },
+  "expected_serializable_prompt": {
+    ".agent": {
+      "system": "SYS N1"
+    },
+    ".request": {
+      "input": "IN T1",
+      "output": {
+        "reply": {
+          "$type": "str"
+        }
+      }
+    }
+  },
+  "expected_text": "user:\n[SYSTEM]:\nSYS N1\n\n[INPUT]:\nIN T1\n\n[OUTPUT REQUIREMENT]:\nData Format: JSON\nData Structure:\n{\n  \"reply\": <str> //\n}\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "configure",
+  "settings": {}
+}

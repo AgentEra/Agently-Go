@@ -1,0 +1,56 @@
+[
+  {
+    "capability_id": "integrations.fastapi",
+    "phase": "P2",
+    "scope": "integrations",
+    "python_source": [
+      "agently/integrations/*",
+      "examples/fastapi/*"
+    ],
+    "go_targets": {
+      "tests": [],
+      "examples": [
+        "examples/fastapi/README.md"
+      ],
+      "impl": []
+    },
+    "status": "MISSING",
+    "milestone": "v1.2"
+  },
+  {
+    "capability_id": "integrations.chromadb",
+    "phase": "P2",
+    "scope": "integrations",
+    "python_source": [
+      "examples/chromadb/*"
+    ],
+    "go_targets": {
+      "tests": [],
+      "examples": [
+        "examples/chromadb/README.md"
+      ],
+      "impl": []
+    },
+    "status": "MISSING",
+    "milestone": "v1.2"
+  },
+  {
+    "capability_id": "integrations.mcp_vlm",
+    "phase": "P2",
+    "scope": "integrations",
+    "python_source": [
+      "examples/mcp/*",
+      "examples/vlm_support/*"
+    ],
+    "go_targets": {
+      "tests": [],
+      "examples": [
+        "examples/mcp/README.md",
+        "examples/vlm_support/README.md"
+      ],
+      "impl": []
+    },
+    "status": "MISSING",
+    "milestone": "v1.2"
+  }
+]

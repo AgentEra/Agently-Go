@@ -1,0 +1,375 @@
+[
+  {
+    "capability_id": "core.plugin_manager.lifecycle",
+    "phase": "P0",
+    "scope": "core",
+    "python_source": [
+      "tests/test_cores/test_plugin_manager.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_cores/test_plugin_event_prompt_test.go"
+      ],
+      "examples": [],
+      "impl": [
+        "agently/core/plugin_manager.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "core.event_center.messenger",
+    "phase": "P0",
+    "scope": "core",
+    "python_source": [
+      "tests/test_cores/test_event_messenger.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_cores/test_plugin_event_prompt_test.go"
+      ],
+      "examples": [],
+      "impl": [
+        "agently/core/event_center.go",
+        "agently/utils/messenger.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "core.prompt.build.text_messages_schema",
+    "phase": "P0",
+    "scope": "core",
+    "python_source": [
+      "tests/test_plugins/test_prompt_generator/test_agently_prompt_generator.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_plugins/test_prompt_generator_prompt_parity_test.go",
+        "tests/test_plugins/test_prompt_generator/test_prompt_generator_fixture_smoke_test.go"
+      ],
+      "examples": [
+        "examples/prompt_generation/text_messages_schema/main.go"
+      ],
+      "impl": [
+        "agently/core/prompt.go",
+        "agently/builtins/plugins/prompt_generator/agently_prompt_generator.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "core.response.ensure_keys_retry",
+    "phase": "P0",
+    "scope": "core",
+    "python_source": [
+      "tests/test_cores/test_response.py",
+      "examples/basic/ensure_keys_in_output.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_cores/test_response_session_test.go"
+      ],
+      "examples": [
+        "examples/basic/ensure_keys_in_output/main.go"
+      ],
+      "impl": [
+        "agently/core/model_request.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "core.response.streaming.delta_specific_instant",
+    "phase": "P0",
+    "scope": "core",
+    "python_source": [
+      "examples/basic/sync_generator_streaming.py",
+      "examples/basic/specific_streaming.py",
+      "examples/basic/streaming_print.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_online/test_online_regression_test.go",
+        "tests/test_online/test_response_and_streaming_example_test.go",
+        "tests/test_plugins/test_response_parser/test_stream_types_semantic_test.go"
+      ],
+      "examples": [
+        "examples/basic/response_and_streaming/main.go",
+        "examples/basic/sync_generator_streaming/main.go",
+        "examples/basic/specific_streaming/main.go",
+        "examples/basic/streaming_print/main.go",
+        "examples/basic/instant_for_multiple_list_items/main.go"
+      ],
+      "impl": [
+        "agently/core/model_request.go",
+        "agently/builtins/plugins/response_parser/agently_response_parser.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "core.session.serialize_and_window",
+    "phase": "P0",
+    "scope": "core",
+    "python_source": [
+      "tests/test_cores/test_session.py",
+      "examples/basic/session.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_cores/test_response_session_test.go",
+        "tests/test_extensions/test_session_extension_test.go"
+      ],
+      "examples": [
+        "examples/basic/session_modes/main.go"
+      ],
+      "impl": [
+        "agently/core/session.go",
+        "agently/builtins/agent_extensions/session_extension.go"
+      ]
+    },
+    "status": "PARTIAL",
+    "milestone": "v1.0.1"
+  },
+  {
+    "capability_id": "extensions.tool.closed_loop",
+    "phase": "P0",
+    "scope": "extensions",
+    "python_source": [
+      "tests/test_extensions/test_tool_extension.py",
+      "tests/test_cores/test_tool.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_extensions/test_tool_extension_test.go",
+        "tests/test_online/test_online_regression_test.go"
+      ],
+      "examples": [
+        "examples/tools_using/tool_agent/main.go"
+      ],
+      "impl": [
+        "agently/builtins/agent_extensions/tool_extension.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "plugins.model_requester.openai_compatible",
+    "phase": "P0",
+    "scope": "plugins",
+    "python_source": [
+      "tests/test_plugins/test_model_requester/test_openai_compatible.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_plugins/test_model_requester/test_openai_compatible_semantic_test.go"
+      ],
+      "examples": [
+        "examples/model_configures/openai_compatible_profiles/main.go"
+      ],
+      "impl": [
+        "agently/builtins/plugins/model_requester/openai_compatible.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "plugins.response_parser.streaming_parse",
+    "phase": "P0",
+    "scope": "plugins",
+    "python_source": [
+      "tests/test_plugins/test_response_parser/test_parse_response_with_comments.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_plugins/test_response_parser/test_stream_types_semantic_test.go"
+      ],
+      "examples": [
+        "examples/basic/response_and_streaming/main.go"
+      ],
+      "impl": [
+        "agently/builtins/plugins/response_parser/agently_response_parser.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "triggerflow.signal_driven.operators",
+    "phase": "P0",
+    "scope": "triggerflow",
+    "python_source": [
+      "examples/trigger_flow/when.py",
+      "examples/trigger_flow/batch.py",
+      "examples/trigger_flow/match_case.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_trigger_flow/test_signal_operator_test.go"
+      ],
+      "examples": [
+        "examples/trigger_flow/signal_basics/main.go",
+        "examples/trigger_flow/operators_and_collect/main.go"
+      ],
+      "impl": [
+        "agently/triggerflow/triggerflow.go",
+        "agently/triggerflow/process.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "triggerflow.runtime_stream_and_exceptions",
+    "phase": "P0",
+    "scope": "triggerflow",
+    "python_source": [
+      "examples/trigger_flow/runtime_stream.py",
+      "examples/trigger_flow/exception_capture.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_trigger_flow/test_signal_operator_test.go"
+      ],
+      "examples": [
+        "examples/trigger_flow/runtime_stream_and_exceptions/main.go"
+      ],
+      "impl": [
+        "agently/triggerflow/execution.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "utils.runtime_data",
+    "phase": "P0",
+    "scope": "utils",
+    "python_source": [
+      "tests/test_utils/test_runtime_data.py",
+      "tests/test_utils/test_runtime_data_2.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_utils/test_core_utils_semantic_test.go"
+      ],
+      "examples": [],
+      "impl": [
+        "agently/utils/runtime_data.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "utils.settings",
+    "phase": "P0",
+    "scope": "utils",
+    "python_source": [
+      "tests/test_utils/test_settings.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_utils/test_core_utils_semantic_test.go"
+      ],
+      "examples": [],
+      "impl": [
+        "agently/utils/settings.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "utils.data_locator_formatter_path_builder",
+    "phase": "P0",
+    "scope": "utils",
+    "python_source": [
+      "tests/test_utils/test_data_locator.py",
+      "tests/test_utils/test_data_formatter.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "agently/utils/data_locator_test.go"
+      ],
+      "examples": [],
+      "impl": [
+        "agently/utils/data_locator.go",
+        "agently/utils/data_formatter.go",
+        "agently/utils/data_path_builder.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "utils.function_shifter",
+    "phase": "P0",
+    "scope": "utils",
+    "python_source": [
+      "tests/test_utils/test_function_shifter.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_utils/test_core_utils_semantic_test.go"
+      ],
+      "examples": [],
+      "impl": [
+        "agently/utils/function_shifter.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "utils.generator_consumer",
+    "phase": "P0",
+    "scope": "utils",
+    "python_source": [
+      "tests/test_utils/test_generator_consumer.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_utils/test_core_utils_semantic_test.go"
+      ],
+      "examples": [],
+      "impl": [
+        "agently/utils/generator_consumer.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  },
+  {
+    "capability_id": "utils.streaming_json",
+    "phase": "P0",
+    "scope": "utils",
+    "python_source": [
+      "tests/test_utils/test_streaming_json_parser.py",
+      "tests/test_utils/test_streaming_json_completer.py"
+    ],
+    "go_targets": {
+      "tests": [
+        "tests/test_utils/test_core_utils_semantic_test.go",
+        "agently/utils/streaming_json_parser_test.go"
+      ],
+      "examples": [
+        "examples/basic/response_and_streaming/main.go"
+      ],
+      "impl": [
+        "agently/utils/streaming_json_parser.go",
+        "agently/utils/streaming_json_completer.go"
+      ]
+    },
+    "status": "PASS",
+    "milestone": "v1"
+  }
+]

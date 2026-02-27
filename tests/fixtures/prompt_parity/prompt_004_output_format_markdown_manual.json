@@ -1,0 +1,45 @@
+{
+  "case_id": "prompt_004_output_format_markdown_manual",
+  "expected_messages": [
+    {
+      "content": "[INPUT]:\nsay hi\n\n[OUTPUT REQUIREMENT]:\nData Format: markdown text\n[OUTPUT]:",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": {
+    "answer": {
+      "$type": "str"
+    }
+  },
+  "expected_serializable_prompt": {
+    ".agent": {},
+    ".request": {
+      "input": "say hi",
+      "output": {
+        "answer": {
+          "$type": "str"
+        }
+      },
+      "output_format": "markdown"
+    }
+  },
+  "expected_text": "user:\n[INPUT]:\nsay hi\n\n[OUTPUT REQUIREMENT]:\nData Format: markdown text\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "direct",
+  "prompt_data": {
+    ".agent": {},
+    ".request": {
+      "input": "say hi",
+      "output": {
+        "answer": {
+          "$type": "str"
+        }
+      },
+      "output_format": "markdown"
+    }
+  },
+  "settings": {}
+}

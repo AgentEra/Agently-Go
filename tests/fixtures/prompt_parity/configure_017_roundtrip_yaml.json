@@ -1,0 +1,51 @@
+{
+  "case_id": "configure_017_roundtrip_yaml",
+  "expected_messages": [
+    {
+      "content": "SYS",
+      "role": "system"
+    },
+    {
+      "content": "[INPUT]:\nIN\n\n[OUTPUT REQUIREMENT]:\nData Format: JSON\nData Structure:\n{\n  \"answer\": <str> //\n}\n\n[OUTPUT]:",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": {
+    "answer": {
+      "$type": "str"
+    }
+  },
+  "expected_serializable_prompt": {
+    ".agent": {
+      "system": "SYS"
+    },
+    ".request": {
+      "input": "IN",
+      "output": {
+        "answer": {
+          "$type": "str"
+        }
+      }
+    }
+  },
+  "expected_text": "user:\n[SYSTEM]:\nSYS\n\n[INPUT]:\nIN\n\n[OUTPUT REQUIREMENT]:\nData Format: JSON\nData Structure:\n{\n  \"answer\": <str> //\n}\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "configure_roundtrip_yaml",
+  "prompt_data": {
+    ".agent": {
+      "system": "SYS"
+    },
+    ".request": {
+      "input": "IN",
+      "output": {
+        "answer": {
+          "$type": "str"
+        }
+      }
+    }
+  },
+  "settings": {}
+}

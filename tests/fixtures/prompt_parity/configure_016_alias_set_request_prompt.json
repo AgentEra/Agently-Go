@@ -1,0 +1,30 @@
+{
+  "case_id": "configure_016_alias_set_request_prompt",
+  "configure": {
+    "content": ".alias:\n  set_request_prompt:\n    .args:\n      - instruct\n      - Reply politely.\n.request:\n  input: hi",
+    "format": "yaml",
+    "mappings": {},
+    "prompt_key_path": ""
+  },
+  "expected_messages": [
+    {
+      "content": "[INSTRUCT]:\nReply politely.\n\n[INPUT]:\nhi\n\n[OUTPUT]:",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": null,
+  "expected_serializable_prompt": {
+    ".agent": {},
+    ".request": {
+      "input": "hi",
+      "instruct": "Reply politely."
+    }
+  },
+  "expected_text": "user:\n[INSTRUCT]:\nReply politely.\n\n[INPUT]:\nhi\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "configure",
+  "settings": {}
+}

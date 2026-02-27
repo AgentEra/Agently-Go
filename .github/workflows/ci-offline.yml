@@ -1,0 +1,31 @@
+name: CI Offline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test-offline:
+    name: Offline Semantic Suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Download modules
+        run: go mod download
+
+      - name: Offline regression tests
+        run: ./scripts/test-offline.sh
+
+      - name: Compile examples
+        run: go test ./examples/...

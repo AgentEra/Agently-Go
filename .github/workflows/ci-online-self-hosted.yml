@@ -1,0 +1,38 @@
+name: CI Online (Self-Hosted Ollama)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-online:
+    name: Online Suite + Online Examples
+    runs-on: self-hosted
+    timeout-minutes: 90
+    env:
+      OLLAMA_BASE_URL: http://127.0.0.1:11434/v1
+      OLLAMA_MODEL: qwen2.5:7b
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Download modules
+        run: go mod download
+
+      - name: Check Ollama health
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsS "${OLLAMA_BASE_URL}/models" > /tmp/ollama-models.json
+          grep -q '"id"[[:space:]]*:[[:space:]]*"'"${OLLAMA_MODEL}"'"' /tmp/ollama-models.json
+
+      - name: Online regression tests
+        run: ./scripts/test-online.sh
+
+      - name: Online example smoke tests
+        run: ./scripts/test-examples.sh

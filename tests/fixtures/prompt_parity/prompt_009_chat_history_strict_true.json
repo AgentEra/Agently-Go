@@ -1,0 +1,73 @@
+{
+  "case_id": "prompt_009_chat_history_strict_true",
+  "expected_messages": [
+    {
+      "content": "[CHAT HISTORY]",
+      "role": "user"
+    },
+    {
+      "content": "A1\n\nA2",
+      "role": "assistant"
+    },
+    {
+      "content": "U1",
+      "role": "user"
+    },
+    {
+      "content": "[User continue input]",
+      "role": "assistant"
+    },
+    {
+      "content": "Q",
+      "role": "user"
+    }
+  ],
+  "expected_output_schema": null,
+  "expected_serializable_prompt": {
+    ".agent": {},
+    ".request": {
+      "chat_history": [
+        {
+          "content": "A1",
+          "role": "assistant"
+        },
+        {
+          "content": "A2",
+          "role": "assistant"
+        },
+        {
+          "content": "U1",
+          "role": "user"
+        }
+      ],
+      "input": "Q"
+    }
+  },
+  "expected_text": "user:\n[CHAT HISTORY]:\n[assistant]:A1\n[assistant]:A2\n[user]:U1\n\n[INPUT]:\nQ\n\n[OUTPUT]:\nassistant:",
+  "message_options": {
+    "rich_content": false,
+    "strict_role_orders": true
+  },
+  "mode": "direct",
+  "prompt_data": {
+    ".agent": {},
+    ".request": {
+      "chat_history": [
+        {
+          "content": "A1",
+          "role": "assistant"
+        },
+        {
+          "content": "A2",
+          "role": "assistant"
+        },
+        {
+          "content": "U1",
+          "role": "user"
+        }
+      ],
+      "input": "Q"
+    }
+  },
+  "settings": {}
+}
